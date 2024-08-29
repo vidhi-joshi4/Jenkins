@@ -55,6 +55,14 @@ pipeline
                 echo "Code is being deployed to this production environment: $PRODUCTION_ENVIRONMENT"
             }
         }
+
+        stage('completing final')
+        {
+            steps
+            {
+                echo "completing"
+            }
+        }
     }
 }
 
