@@ -7,14 +7,14 @@ pipeline
     }
     stages
     {
-        stage('Build')
+        stage("Build")
         {
             steps
             {
                 echo "Build using Maven to compile and package"
             }
         }
-        stage('Unit and Integration Tests')
+        stage("Unit and Integration Tests")
         {
             steps
             {
@@ -34,7 +34,7 @@ pipeline
             }
             
         }
-        stage('Code Analysis')
+        stage("Code Analysis")
         {
             steps
             {
@@ -43,7 +43,7 @@ pipeline
             }
             
         }
-        stage('Security Scan')
+        stage("Security Scan")
         {
             steps
             {
@@ -60,7 +60,7 @@ pipeline
                 }
             }
         }
-        stage('Deploy to Staging')
+        stage("Deploy to Staging")
         {
             steps
             {
@@ -68,16 +68,14 @@ pipeline
                 echo "Staging server is AWS EC2"
             }
         }
-        stage('Integration Tests on Staging')
+        stage("Integration Tests on Staging")
         {
             steps
             {
-                
                  echo "Running integration tests on the staging environment to ensure the application functions as expected in a production-like environment."
-                
             }
         }
-        stage('Deploy to Production')
+        stage("Deploy to Production")
         {
             steps
             {
