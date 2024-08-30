@@ -1,10 +1,7 @@
 pipeline
 {
     agent any 
-    environment 
-    {
-       // none required
-    }
+   
     stages
     {
         stage("Build")
