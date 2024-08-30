@@ -54,7 +54,7 @@ pipeline
             {
                 success
                 {
-                    mail to: "jenkinsdeakin@gmail.com"
+                    mail to: "jenkinsdeakin@gmail.com",
                     subject: "Security Scan outcome",
                     body: "Security Scan was successful"
                 }
