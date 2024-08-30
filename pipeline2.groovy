@@ -27,7 +27,7 @@ pipeline
             {
                 success
                 {
-                    mail to: "jenkinsdeakin@gmail.com"
+                    mail to: "jenkinsdeakin@gmail.com",
                     subject: "Unit tests and Integration tests outcome",
                     body: "Unit tests and Integration test have been successful"
                 }
