@@ -26,7 +26,7 @@ pipeline
                 {
                     mail to: "jenkinsdeakin@gmail.com",
                     subject: "Unit tests and Integration tests outcome",
-                    body: "Unit tests and Integration test have been successful"
+                    body: "Unit tests and Integration test have been successful",
                     attachLog: true
                 }
             }
@@ -54,7 +54,7 @@ pipeline
                 {
                     mail to: "jenkinsdeakin@gmail.com",
                     subject: "Security Scan outcome",
-                    body: "Security Scan was successful"
+                    body: "Security Scan was successful",
                     attachLog: true
                 }
             }
