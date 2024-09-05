@@ -19,6 +19,11 @@ pipeline
                 echo "Integration tests: Ensuring different components of the application work together as expected"
                 echo "Unit and Integration tests are conducted using Appium"
 
+                script {
+                    
+                    sh 'echo "Build log content" > build.log'
+                }
+
             }
             post
             {
@@ -27,6 +32,10 @@ pipeline
                     mail to: "jenkinsdeakin@gmail.com",
                     subject: "Unit tests and Integration tests outcome",
                     body: "Unit tests and Integration test have been successful"
+
+                    archiveArtifacts artifacts: 'build.log', allowEmptyArchive: true
+
+                    
                 }
             }
             
