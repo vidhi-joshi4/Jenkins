@@ -29,6 +29,9 @@ pipeline
                     mail to: "jenkinsdeakin@gmail.com",
                     subject: "Unit tests and Integration tests outcome",
                     body: "Unit tests and Integration test have been successful"
+
+                                    emailext attachLog: true, body: 'Unit tests and Integration test have been successful ', subject: 'Unit tests and Integration tests outcome', to: 'jenkinsdeakin@gmail.com'
+
                 }
             }
             
