@@ -1,5 +1,5 @@
 pipeline {
-    agent any 
+    agent any
     
     stages {
         stage('Build') {
@@ -37,10 +37,10 @@ pipeline {
                         attachmentsPattern: 'test.log'
                     )
                 }
-            }
-            always {
-                // Archive the test log
-                archiveArtifacts artifacts: 'test.log', allowEmptyArchive: true
+                always {
+                    // Archive the test log
+                    archiveArtifacts artifacts: 'test.log', allowEmptyArchive: true
+                }
             }
         }
         stage('Code Analysis') {
@@ -68,10 +68,10 @@ pipeline {
                         attachmentsPattern: 'security_scan.log'
                     )
                 }
-            }
-            always {
-                // Archive the security scan log
-                archiveArtifacts artifacts: 'security_scan.log', allowEmptyArchive: true
+                always {
+                    // Archive the security scan log
+                    archiveArtifacts artifacts: 'security_scan.log', allowEmptyArchive: true
+                }
             }
         }
         stage('Deploy to Staging') {
