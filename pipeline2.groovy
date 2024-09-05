@@ -1,5 +1,5 @@
 pipeline {
-    agent any 
+    agent any
 
     stages {
         stage("Build") {
@@ -16,14 +16,16 @@ pipeline {
             post {
                 success {
                     script {
-                        def buildLog = currentBuild.rawBuild.logFile.text
-                        emailext(
+                        // Save build log to a file
+                        sh "cat \${JENKINS_HOME}/jobs/\${JOB_NAME}/builds/\${BUILD_NUMBER}/log > build.log"
+                        
+                        // Send email with attachment
+                        emailext (
                             to: "jenkinsdeakin@gmail.com",
                             subject: "Unit tests and Integration tests outcome",
                             body: "Unit tests and Integration tests have been successful",
                             attachmentsPattern: "build.log"
                         )
-                        writeFile file: 'build.log', text: buildLog
                     }
                 }
             }
@@ -42,14 +44,16 @@ pipeline {
             post {
                 success {
                     script {
-                        def buildLog = currentBuild.rawBuild.logFile.text
-                        emailext(
+                        // Save build log to a file
+                        sh "cat \${JENKINS_HOME}/jobs/\${JOB_NAME}/builds/\${BUILD_NUMBER}/log > build.log"
+                        
+                        // Send email with attachment
+                        emailext (
                             to: "jenkinsdeakin@gmail.com",
                             subject: "Security Scan outcome",
                             body: "Security Scan was successful",
                             attachmentsPattern: "build.log"
                         )
-                        writeFile file: 'build.log', text: buildLog
                     }
                 }
             }
