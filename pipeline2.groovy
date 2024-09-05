@@ -18,9 +18,6 @@ pipeline
                 echo "Unit tests: Ensuring code functions as expected"
                 echo "Integration tests: Ensuring different components of the application work together as expected"
                 echo "Unit and Integration tests are conducted using Appium"
-
-                emailext attachLog: true, body: 'Unit tests and Integration test have been successful ', subject: 'Unit tests and Integration tests outcome', to: 'jenkinsdeakin@gmail.com'
-
             }
             post
             {
@@ -29,8 +26,6 @@ pipeline
                     mail to: "jenkinsdeakin@gmail.com",
                     subject: "Unit tests and Integration tests outcome",
                     body: "Unit tests and Integration test have been successful"
-
-                                    emailext attachLog: true, body: 'Unit tests and Integration test have been successful ', subject: 'Unit tests and Integration tests outcome', to: 'jenkinsdeakin@gmail.com'
 
                 }
             }
