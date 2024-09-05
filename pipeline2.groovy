@@ -27,9 +27,16 @@ pipeline
                     //subject: "Unit tests and Integration tests outcome",
                     //body: "Unit tests and Integration test have been successful"
 
-                    emailext body: 'Test Message',
-                    subject: 'Test Subject',
-                    to: 'jenkinsdeakin@gmail.com'
+                    //emailext body: 'Test Message',
+                    //subject: 'Test Subject',
+                    //to: 'jenkinsdeakin@gmail.com'
+
+                    emailext(
+  subject: "Build ${currentBuild.fullDisplayName}",
+  body: "Build ${currentBuild.fullDisplayName} completed with status ${currentBuild.currentResult}",
+  to: "jenkinsdeakin@gmail.com"
+)
+
 
                 }
             }
