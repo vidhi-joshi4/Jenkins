@@ -29,7 +29,7 @@ pipeline
 
                     emailext body: 'Test Message',
                     subject: 'Test Subject',
-                    to: 'test@example.com'
+                    to: 'jenkinsdeakin@gmail.com'
 
                 }
             }
@@ -60,7 +60,7 @@ pipeline
                     //body: "Security Scan was successful"
                     emailext body: 'Test Message',
                     subject: 'Test Subject',
-                    to: 'test@example.com'
+                    to: 'jenkinsdeakin@gmail.com'
                 }
             }
         }
