@@ -60,4 +60,13 @@ pipeline {
         stage('Deploy to Production') {
             steps {
                 echo "Deploying the application"
-                ech
+                echo "Production Server used is AWS EC2"
+            }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: '**/log/**/*', allowEmptyArchive: true
+        }
+    }
+}
