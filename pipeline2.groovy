@@ -27,7 +27,9 @@ pipeline
                     //subject: "Unit tests and Integration tests outcome",
                     //body: "Unit tests and Integration test have been successful"
 
-                    emailext body: 'testing', subject: 'testing', to: 'jenkinsdeakin@gmail.com'
+                    emailext body: 'Test Message',
+                    subject: 'Test Subject',
+                    to: 'test@example.com'
 
                 }
             }
@@ -53,9 +55,12 @@ pipeline
             {
                 success
                 {
-                    mail to: "jenkinsdeakin@gmail.com",
-                    subject: "Security Scan outcome",
-                    body: "Security Scan was successful"
+                    //mail to: "jenkinsdeakin@gmail.com",
+                    //subject: "Security Scan outcome",
+                    //body: "Security Scan was successful"
+                    emailext body: 'Test Message',
+                    subject: 'Test Subject',
+                    to: 'test@example.com'
                 }
             }
         }
