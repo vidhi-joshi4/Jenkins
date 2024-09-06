@@ -96,5 +96,21 @@ pipeline
                 echo "Production Server used is AWS EC2"
             }
         }
+
+        post 
+        {
+            always
+            {
+                emailext (
+                    subject: "test",
+                    body: "test",
+                    to: 'jenkinsdeakin@gmail.com',
+                    from: 'jenkins@example.com',
+                    replyTo: 'jenkins@example.com'
+                    mimeType: 'text/html'
+                    )
+            }
+        }
+        
     }
 }
