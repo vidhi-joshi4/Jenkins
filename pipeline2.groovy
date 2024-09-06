@@ -105,25 +105,22 @@ pipeline
 
     }
 
-        post {
-            always {
-                emailext (
-                    subject: "Pipeline Status: ${currentBuild.result}",
-                    body: '''<html>
-                                <body>
-                                    <p>Build Status: ${BUILD_STATUS}</p>
-                                    <p>Build Number: ${BUILD_NUMBER}</p>
-                                    <p>Check the <a href="${BUILD_URL}">console output</a>.</p>
-                                </body>
-                            </html>''',
-                    to: 'jenkinsdeakin@gmail.com',
-                    from: 'jenkins@example.com', 
-                    replyTo: 'jenkins@example.com', 
-                    mimeType: 'text/html'
-                    )
-            }
-        }
         
+
+    post {
+        always {
+            archiveArtifacts artifacts: 'generatedFile.txt', onlyIfSuccessful: true
+            
+            echo 'I will always say Hello again!'
+                
+            emailext attachLog: true, attachmentsPattern: 'generatedFile.txt',
+                body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
+                recipientProviders: [developers(), requestor()],
+                subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
+            
+        }
+    }
+}
     
 }
 
