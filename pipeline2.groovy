@@ -30,7 +30,7 @@ pipeline
                     emailext body: 'Unit tests and Integration test have been successful',
                     subject: 'Unit tests and Integration tests outcome',
                     to: 'jenkinsdeakin@gmail.com'
-                    attachLog: true
+                    //attachLog: true
 
                     //emailext body: 'Test Message',
                     //subject: 'Test Subject',
@@ -71,7 +71,7 @@ pipeline
                     emailext body: 'Test Message',
                     subject: 'Test Subject',
                     to: 'jenkinsdeakin@gmail.com'
-                    attachLog: true
+                    //attachLog: true
                     
                     
                 }
