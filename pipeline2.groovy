@@ -65,7 +65,7 @@ pipeline
                     //body: "Security Scan was successful"
                     emailext body: 'Test Message',
                     subject: 'Test Subject',
-                    mail to: 'jenkinsdeakin@gmail.com'
+                    to: 'jenkinsdeakin@gmail.com'
                 }
             }
         }
