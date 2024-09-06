@@ -21,7 +21,7 @@ pipeline
             }
             post
             {
-                success
+                always
                 {
                     mail to: "jenkinsdeakin@gmail.com",
                     subject: "Unit tests and Integration tests outcome",
@@ -58,7 +58,7 @@ pipeline
             }
             post
             {
-                success
+                always
                 {
                     //mail to: "jenkinsdeakin@gmail.com",
                     //subject: "Security Scan outcome",
